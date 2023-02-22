@@ -33,11 +33,6 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     }
 
     // API마다 구분짓기 위한 설정.
-	@Bean
-    public Docket restTemplateApi() {
-        return getDocket("RestTemplate", Predicates.or(PathSelectors.regex("/rest.*")));
-    }
-
     @Bean
     public Docket allApi() {
         return getDocket("전체", Predicates.or(PathSelectors.regex("/*.*")));
