@@ -37,9 +37,9 @@ public class WebClientConfig {
 
         return WebClient.builder()
                 .clientConnector(connector)
-                .baseUrl("https://api.upbit.com")
+                .baseUrl("http://localhost:32000")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-                .defaultUriVariables(Collections.singletonMap("url","https://api.upbit.com"))
+                .defaultUriVariables(Collections.singletonMap("url","http://localhost:32000"))
                 .build();
 
         /**

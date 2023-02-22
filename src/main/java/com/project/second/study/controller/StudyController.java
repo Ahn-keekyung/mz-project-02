@@ -1,5 +1,6 @@
 package com.project.second.study.controller;
 
+import com.project.second.study.model.dto.Coin;
 import com.project.second.study.service.StudyService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -10,6 +11,7 @@ import org.springframework.util.StopWatch;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 @RestController
 @RequiredArgsConstructor
@@ -67,5 +69,11 @@ public class StudyController {
         String returnMessage = stopwatch.getTotalTimeSeconds() + " seconds";
 
         return returnMessage;
+    }
+
+    @ApiOperation(value = "[32000번 POD 데이터 요청] 플럭스 코인 리스트 정보")
+    @GetMapping(value = "/pod/coinList")
+    public Flux<Coin> coinInfoWhitFlux(){
+        return service.getCoinInfoWithFlux();
     }
 }
