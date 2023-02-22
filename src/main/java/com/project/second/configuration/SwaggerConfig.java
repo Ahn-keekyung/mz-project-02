@@ -33,21 +33,10 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
     }
 
     // API마다 구분짓기 위한 설정.
-
-//    @Bean
-//    public Docket webClientFluxApi() {
-//        return getDocket("WebClient Whit Flux", Predicates.or(PathSelectors.regex("/webclient/flux.*")));
-//    }
-//
-//    @Bean
-//    public Docket webClientMonoApi() {
-//        return getDocket("WebClient Whit Mono", Predicates.or(PathSelectors.regex("/webclient/mono.*")));
-//    }
-//
-//	@Bean
-//    public Docket restTemplateApi() {
-//        return getDocket("RestTemplate", Predicates.or(PathSelectors.regex("/rest.*")));
-//    }
+	@Bean
+    public Docket restTemplateApi() {
+        return getDocket("RestTemplate", Predicates.or(PathSelectors.regex("/rest.*")));
+    }
 
     @Bean
     public Docket allApi() {
