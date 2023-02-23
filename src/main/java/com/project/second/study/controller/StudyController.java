@@ -73,12 +73,7 @@ public class StudyController {
 
     @ApiOperation(value = "[32000번 POD 데이터 요청] 플럭스 코인 리스트 정보")
     @GetMapping(value = "/pod/coinList")
-    public String coinInfoWhitFlux(){
-        try {
-            service.getCoinInfoWithFlux();
-            return "200 완료";
-        }catch (Exception e){
-            return e.getMessage();
-        }
+    public Flux<Coin> coinInfoWhitFlux(){
+        return service.getCoinInfoWithFlux();
     }
 }
