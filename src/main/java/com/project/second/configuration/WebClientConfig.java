@@ -37,7 +37,7 @@ public class WebClientConfig {
 
         return WebClient.builder()
                 .clientConnector(connector)
-                .baseUrl("http://localhost:32000")
+                .baseUrl("http://127.0.0.1:32000")
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .defaultUriVariables(Collections.singletonMap("url","http://localhost:32000"))
                 .build();
