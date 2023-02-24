@@ -21,7 +21,7 @@ public class StudyController {
 
     private final StudyService service;
 
-    @ApiOperation(value = "[Spring Event Study] 회원가입")
+    @ApiOperation(value = "[Spring Event Study] 회원가입 테스트지롱~~~")
     @ApiImplicitParam(
         name = "name"
         , value = "가입할 이름"
